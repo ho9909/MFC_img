@@ -1,4 +1,4 @@
-// recordprogram.cpp : ±¸Çö ÆÄÀÏÀÔ´Ï´Ù.
+// recordprogram.cpp : êµ¬í˜„ íŒŒì¼ì…ë‹ˆë‹¤.
 //
 
 #include <iostream>
@@ -12,7 +12,7 @@
 using namespace std;
 
 //avcodec_register_all();
-// recordprogram ´ëÈ­ »óÀÚÀÔ´Ï´Ù.
+// recordprogram ëŒ€í™” ìƒìì…ë‹ˆë‹¤.
 
 IMPLEMENT_DYNAMIC(recordprogram, CDialogEx)
 
@@ -51,7 +51,7 @@ BEGIN_MESSAGE_MAP(recordprogram, CDialogEx)
 END_MESSAGE_MAP()
 
 
-// recordprogram ¸Ş½ÃÁö Ã³¸®±âÀÔ´Ï´Ù.
+// recordprogram ë©”ì‹œì§€ ì²˜ë¦¬ê¸°ì…ë‹ˆë‹¤.
 
 void recordprogram::OnTimer(UINT_PTR nIDEvent){
 	if(nIDEvent == 1){
@@ -104,12 +104,12 @@ void recordprogram::OnTimer(UINT_PTR nIDEvent){
 
 void recordprogram::OnCapture()
 {
-	// TODO: ¿©±â¿¡ ¸í·É Ã³¸®±â ÄÚµå¸¦ Ãß°¡ÇÕ´Ï´Ù.
+	// TODO: ì—¬ê¸°ì— ëª…ë ¹ ì²˜ë¦¬ê¸° ì½”ë“œë¥¼ ì¶”ê°€í•©ë‹ˆë‹¤.
 	CWnd *pWnd = AfxGetMainWnd();
 	HWND hwnd = this->m_hWnd;
 
 
-	// µà¾ó¸ğ´ÏÅÍ ÀÎ°æ¿ì º¸Á¶ ¸ğ´ÏÅÍÀÇ Ä¸ÃÄ°¡ µÇÁö ¾ÊÀ½
+	// ë“€ì–¼ëª¨ë‹ˆí„° ì¸ê²½ìš° ë³´ì¡° ëª¨ë‹ˆí„°ì˜ ìº¡ì³ê°€ ë˜ì§€ ì•ŠìŒ
 
 	CRect rdlg;
 	::GetWindowRect(hwnd, &rdlg);
@@ -131,7 +131,7 @@ void recordprogram::OnCapture()
 	BitBlt(capture_Img.GetDC(),0,0,nx, ny, h_dc, rdlg.left+7,rdlg.top+50,SRCCOPY);
 
 	if(!capture_Img.IsNull()){
-		TCHAR szFilter[] = _T("JPG ÀÌ¹ÌÁö|*.jpg|PNG ÀÌ¹ÌÁö|*.png|Bitmap ÀÌ¹ÌÁö|*.bmp|Raw ÀÌ¹ÌÁö|*.raw|¸ğµçÆÄÀÏ(*.*)|*.*||");
+		TCHAR szFilter[] = _T("JPG ì´ë¯¸ì§€|*.jpg|PNG ì´ë¯¸ì§€|*.png|Bitmap ì´ë¯¸ì§€|*.bmp|Raw ì´ë¯¸ì§€|*.raw|ëª¨ë“ íŒŒì¼(*.*)|*.*||");
 		CFileDialog fileDlg(TRUE, NULL, NULL, OFN_HIDEREADONLY, szFilter);
 
 		if(fileDlg.DoModal() == IDOK){
@@ -181,15 +181,15 @@ void recordprogram::OnCapture()
 
 void recordprogram::OnStart()
 {
-	// TODO: ¿©±â¿¡ ¸í·É Ã³¸®±â ÄÚµå¸¦ Ãß°¡ÇÕ´Ï´Ù.
-	::SetWindowPos(GetSafeHwnd(),  HWND_TOPMOST , 0, 0, 0, 0, SWP_NOMOVE | SWP_NOSIZE); // ´ÙÀÌ¾ó·Î±× ÃÖ»óÀ§ Æ÷Ä¿½º °íÁ¤
+	// TODO: ì—¬ê¸°ì— ëª…ë ¹ ì²˜ë¦¬ê¸° ì½”ë“œë¥¼ ì¶”ê°€í•©ë‹ˆë‹¤.
+	::SetWindowPos(GetSafeHwnd(),  HWND_TOPMOST , 0, 0, 0, 0, SWP_NOMOVE | SWP_NOSIZE); // ë‹¤ì´ì–¼ë¡œê·¸ ìµœìƒìœ„ í¬ì»¤ìŠ¤ ê³ ì •
 	i=0;
 	index = 0;
 	SetTimer(1,1000/24,NULL);
 
 }
 
-void DeleteAllFiles(CString dirName) // µğ·ºÅÍ¸® ³» ¸ğµç ÆÄÀÏ »èÁ¦
+void DeleteAllFiles(CString dirName) // ë””ë ‰í„°ë¦¬ ë‚´ ëª¨ë“  íŒŒì¼ ì‚­ì œ
 {
 	CFileFind finder;
 	BOOL bWorking  = finder.FindFile((CString)dirName + "/*.*");
@@ -210,7 +210,7 @@ void DeleteAllFiles(CString dirName) // µğ·ºÅÍ¸® ³» ¸ğµç ÆÄÀÏ »èÁ¦
 
 void recordprogram::OnEnd()
 {
-	// TODO: ¿©±â¿¡ ¸í·É Ã³¸®±â ÄÚµå¸¦ Ãß°¡ÇÕ´Ï´Ù.
+	// TODO: ì—¬ê¸°ì— ëª…ë ¹ ì²˜ë¦¬ê¸° ì½”ë“œë¥¼ ì¶”ê°€í•©ë‹ˆë‹¤.
 	FILE *fp;
 
 	//char output[300];
@@ -226,7 +226,7 @@ void recordprogram::OnEnd()
 
 void recordprogram::OnAllcap()
 {
-	// TODO: ¿©±â¿¡ ¸í·É Ã³¸®±â ÄÚµå¸¦ Ãß°¡ÇÕ´Ï´Ù.
+	// TODO: ì—¬ê¸°ì— ëª…ë ¹ ì²˜ë¦¬ê¸° ì½”ë“œë¥¼ ì¶”ê°€í•©ë‹ˆë‹¤.
 	CWnd *pWnd = AfxGetMainWnd();
 	HWND hwnd = this->m_hWnd;
 
@@ -244,7 +244,7 @@ void recordprogram::OnAllcap()
 	::BitBlt(all_Img.GetDC(), 0,0,cx,cy, h_dc,0,0,SRCCOPY);
 
 	if(!all_Img.IsNull()){
-		TCHAR szFilter[] = _T("JPG ÀÌ¹ÌÁö|*.jpg|PNG ÀÌ¹ÌÁö|*.png|Bitmap ÀÌ¹ÌÁö|*.bmp|Raw ÀÌ¹ÌÁö|*.raw|¸ğµçÆÄÀÏ(*.*)|*.*||");
+		TCHAR szFilter[] = _T("JPG ì´ë¯¸ì§€|*.jpg|PNG ì´ë¯¸ì§€|*.png|Bitmap ì´ë¯¸ì§€|*.bmp|Raw ì´ë¯¸ì§€|*.raw|ëª¨ë“ íŒŒì¼(*.*)|*.*||");
 		CFileDialog fileDlg(TRUE, NULL, NULL, OFN_HIDEREADONLY, szFilter);
 
 		if(fileDlg.DoModal() == IDOK){
@@ -342,7 +342,7 @@ void recordprogram::OnKillFocus(CWnd* pNewWnd)
 		::BitBlt(all_Img.GetDC(), 0,0,nx,ny, h_dc,rdlg.left,rdlg.top,SRCCOPY);
 
 		if(!all_Img.IsNull()){
-			TCHAR szFilter[] = _T("JPG ÀÌ¹ÌÁö|*.jpg|PNG ÀÌ¹ÌÁö|*.png|Bitmap ÀÌ¹ÌÁö|*.bmp|Raw ÀÌ¹ÌÁö|*.raw|¸ğµçÆÄÀÏ(*.*)|*.*||");
+			TCHAR szFilter[] = _T("JPG ì´ë¯¸ì§€|*.jpg|PNG ì´ë¯¸ì§€|*.png|Bitmap ì´ë¯¸ì§€|*.bmp|Raw ì´ë¯¸ì§€|*.raw|ëª¨ë“ íŒŒì¼(*.*)|*.*||");
 			CFileDialog fileDlg(TRUE, NULL, NULL, OFN_HIDEREADONLY, szFilter);
 
 			if(fileDlg.DoModal() == IDOK){
@@ -386,5 +386,5 @@ void recordprogram::OnKillFocus(CWnd* pNewWnd)
 		all_Img.ReleaseDC();
 	}
 	count = 0;
-	// TODO: ¿©±â¿¡ ¸Ş½ÃÁö Ã³¸®±â ÄÚµå¸¦ Ãß°¡ÇÕ´Ï´Ù.
+	// TODO: ì—¬ê¸°ì— ë©”ì‹œì§€ ì²˜ë¦¬ê¸° ì½”ë“œë¥¼ ì¶”ê°€í•©ë‹ˆë‹¤.
 }
