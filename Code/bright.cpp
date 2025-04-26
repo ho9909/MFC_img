@@ -1,4 +1,4 @@
-// bright.cpp : ���� �����Դϴ�.
+// bright.cpp : 구현 파일입니다.
 //
 
 #include "stdafx.h"
@@ -7,7 +7,7 @@
 #include "afxdialogex.h"
 
 
-// bright ��ȭ �����Դϴ�.
+// bright 대화 상자입니다.
 
 IMPLEMENT_DYNAMIC(bright, CDialogEx)
 
@@ -35,7 +35,7 @@ BEGIN_MESSAGE_MAP(bright, CDialogEx)
 END_MESSAGE_MAP()
 
 
-// bright �޽��� ó�����Դϴ�.
+// bright 메시지 처리기입니다.
 BOOL bright::OnInitDialog()
 {
 	CDialogEx::OnInitDialog();
@@ -54,12 +54,12 @@ BOOL bright::OnInitDialog()
 
 void bright::OnEnChangeEditTest()
 {
-	// TODO:  RICHEDIT ��Ʈ���� ���, �� ��Ʈ����
-	// CDialog::OnInitDialog() �Լ��� ������ 
-	//�ϰ� ����ũ�� OR �����Ͽ� ������ ENM_CHANGE �÷��׸� �����Ͽ� CRichEditCtrl().SetEventMask()�� ȣ������ ������
-	// �� �˸� �޽����� ������ �ʽ��ϴ�.
+	// TODO:  RICHEDIT 컨트롤인 경우, 이 컨트롤은
+	// CDialog::OnInitDialog() 함수를 재지정 
+	//하고 마스크에 OR 연산하여 설정된 ENM_CHANGE 플래그를 지정하여 CRichEditCtrl().SetEventMask()를 호출하지 않으면
+	// 이 알림 메시지를 보내지 않습니다.
 
-	// TODO:  ���⿡ ��Ʈ�� �˸� ó���� �ڵ带 �߰��մϴ�.
+	// TODO:  여기에 컨트롤 알림 처리기 코드를 추가합니다.
 	CString temp;
 	edit1.GetWindowText(temp);
 	result = _ttoi(temp);
@@ -67,12 +67,12 @@ void bright::OnEnChangeEditTest()
 }
 
 void bright::OnNMCustomdrawSlider(NMHDR *pNMHDR, LRESULT *pResult){
-	LPNMCUSTOMDRAW pNMCD = reinterpret_cast<LPNMCUSTOMDRAW>(pNMHDR); // ������ Ÿ�� ��ȯ
-	// TODO: ���⿡ ��Ʈ�� �˸� ó���� �ڵ带 �߰��մϴ�.
-	int iPos = slider1.GetPos(); //�̵��ϴ� ��ǥ�� �ޱ�
+	LPNMCUSTOMDRAW pNMCD = reinterpret_cast<LPNMCUSTOMDRAW>(pNMHDR); // 포인터 타입 변환
+	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
+	int iPos = slider1.GetPos(); //이동하는 좌표값 받기
 	CString sPos;
-	sPos.Format(_T("%d"), iPos); //���氪 ����
-	edit1.SetWindowText(sPos); // ���氪 ���
+	sPos.Format(_T("%d"), iPos); //변경값 저장
+	edit1.SetWindowText(sPos); // 변경값 출력
 	*pResult = 0;
 
 }
