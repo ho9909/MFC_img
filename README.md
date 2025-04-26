@@ -19,7 +19,8 @@
 <br />
 
 # 구현 기능
-> 자세한 내용은 pdf 참고
+> 자세한 내용은 pdf 참고<br />
+> https://github.com/ho9909/MFC_img/blob/main/MFC%20%EC%98%81%EC%83%81%EC%B2%98%EB%A6%AC.pdf
 > 1. 이미지 필터 기능( binary, sobel, gray scale) 
 > 2. 이미지 열기 및 저장(PNG, JPG, RAW, BIT)
 > 3. 현금판별기(지폐 한정)
