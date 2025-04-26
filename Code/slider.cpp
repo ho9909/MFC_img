@@ -1,4 +1,4 @@
-// slider.cpp : ±¸Çö ÆÄÀÏÀÔ´Ï´Ù.
+// slider.cpp : êµ¬í˜„ íŒŒì¼ì…ë‹ˆë‹¤.
 //
 
 #include "stdafx.h"
@@ -7,7 +7,7 @@
 #include "afxdialogex.h"
 
 
-// slider ´ëÈ­ »óÀÚÀÔ´Ï´Ù.
+// slider ëŒ€í™” ìƒìì…ë‹ˆë‹¤.
 
 IMPLEMENT_DYNAMIC(slider, CDialog)
 
@@ -35,11 +35,11 @@ BEGIN_MESSAGE_MAP(slider, CDialog)
 END_MESSAGE_MAP()
 
 
-// slider ¸Ş½ÃÁö Ã³¸®±âÀÔ´Ï´Ù.
+// slider ë©”ì‹œì§€ ì²˜ë¦¬ê¸°ì…ë‹ˆë‹¤.
 
 
 BOOL slider::OnInitDialog(){
-	//ÃÊ±â ¼³Á¤
+	//ì´ˆê¸° ì„¤ì •
 
 	CDialog::OnInitDialog();
 	m_sliderTest.SetRange(0,255);
@@ -57,12 +57,12 @@ BOOL slider::OnInitDialog(){
 
 void slider::OnEnChangeEditTest()
 {
-	// TODO:  RICHEDIT ÄÁÆ®·ÑÀÎ °æ¿ì, ÀÌ ÄÁÆ®·ÑÀº
-	// CDialog::OnInitDialog() ÇÔ¼ö¸¦ ÀçÁöÁ¤ 
-	//ÇÏ°í ¸¶½ºÅ©¿¡ OR ¿¬»êÇÏ¿© ¼³Á¤µÈ ENM_CHANGE ÇÃ·¡±×¸¦ ÁöÁ¤ÇÏ¿© CRichEditCtrl().SetEventMask()¸¦ È£ÃâÇÏÁö ¾ÊÀ¸¸é
-	// ÀÌ ¾Ë¸² ¸Ş½ÃÁö¸¦ º¸³»Áö ¾Ê½À´Ï´Ù.
+	// TODO:  RICHEDIT ì»¨íŠ¸ë¡¤ì¸ ê²½ìš°, ì´ ì»¨íŠ¸ë¡¤ì€
+	// CDialog::OnInitDialog() í•¨ìˆ˜ë¥¼ ì¬ì§€ì • 
+	//í•˜ê³  ë§ˆìŠ¤í¬ì— OR ì—°ì‚°í•˜ì—¬ ì„¤ì •ëœ ENM_CHANGE í”Œë˜ê·¸ë¥¼ ì§€ì •í•˜ì—¬ CRichEditCtrl().SetEventMask()ë¥¼ í˜¸ì¶œí•˜ì§€ ì•Šìœ¼ë©´
+	// ì´ ì•Œë¦¼ ë©”ì‹œì§€ë¥¼ ë³´ë‚´ì§€ ì•ŠìŠµë‹ˆë‹¤.
 
-	// TODO:  ¿©±â¿¡ ÄÁÆ®·Ñ ¾Ë¸² Ã³¸®±â ÄÚµå¸¦ Ãß°¡ÇÕ´Ï´Ù.
+	// TODO:  ì—¬ê¸°ì— ì»¨íŠ¸ë¡¤ ì•Œë¦¼ ì²˜ë¦¬ê¸° ì½”ë“œë¥¼ ì¶”ê°€í•©ë‹ˆë‹¤.
 	CString temp;
 	m_editest.GetWindowText(temp);
 	result = _ttoi(temp);
@@ -71,11 +71,11 @@ void slider::OnEnChangeEditTest()
 }
 
 void slider::OnNMCustomdrawSlider(NMHDR *pNMHDR, LRESULT *pResult){
-	LPNMCUSTOMDRAW pNMCD = reinterpret_cast<LPNMCUSTOMDRAW>(pNMHDR); // Æ÷ÀÎÅÍ Å¸ÀÔ º¯È¯
-	// TODO: ¿©±â¿¡ ÄÁÆ®·Ñ ¾Ë¸² Ã³¸®±â ÄÚµå¸¦ Ãß°¡ÇÕ´Ï´Ù.
-	int iPos = m_sliderTest.GetPos(); //ÁÂÇ¥°ª ¹Ş±â
+	LPNMCUSTOMDRAW pNMCD = reinterpret_cast<LPNMCUSTOMDRAW>(pNMHDR); // í¬ì¸í„° íƒ€ì… ë³€í™˜
+	// TODO: ì—¬ê¸°ì— ì»¨íŠ¸ë¡¤ ì•Œë¦¼ ì²˜ë¦¬ê¸° ì½”ë“œë¥¼ ì¶”ê°€í•©ë‹ˆë‹¤.
+	int iPos = m_sliderTest.GetPos(); //ì¢Œí‘œê°’ ë°›ê¸°
 	CString sPos;
-	sPos.Format(_T("%d"), iPos); //º¯°æ°ª ÀúÀå
-	m_editest.SetWindowText(sPos); // º¯°æ°ª Ãâ·Â
+	sPos.Format(_T("%d"), iPos); //ë³€ê²½ê°’ ì €ì¥
+	m_editest.SetWindowText(sPos); // ë³€ê²½ê°’ ì¶œë ¥
 	*pResult = 0;
 }
