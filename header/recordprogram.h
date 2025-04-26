@@ -7,22 +7,22 @@
 #include "afxcmn.h"
 #include "mymfc.h"
 
-// recordprogram ´ëÈ­ »óÀÚÀÔ´Ï´Ù.
+// recordprogram ëŒ€í™” ìƒìì…ë‹ˆë‹¤.
 
 class recordprogram : public CDialogEx
 {
 	DECLARE_DYNAMIC(recordprogram)
 
 public:
-	recordprogram(CWnd* pParent = NULL);   // Ç¥ÁØ »ı¼ºÀÚÀÔ´Ï´Ù.
+	recordprogram(CWnd* pParent = NULL);   // í‘œì¤€ ìƒì„±ìì…ë‹ˆë‹¤.
     virtual BOOL PreTranslateMessage(MSG* pMsg);
 	virtual ~recordprogram();
 
-// ´ëÈ­ »óÀÚ µ¥ÀÌÅÍÀÔ´Ï´Ù.
+// ëŒ€í™” ìƒì ë°ì´í„°ì…ë‹ˆë‹¤.
 	enum { IDD = IDD_DIALOG1 };
 
 protected:
-	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV Áö¿øÀÔ´Ï´Ù.
+	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV ì§€ì›ì…ë‹ˆë‹¤.
 
 	DECLARE_MESSAGE_MAP()
 public:
