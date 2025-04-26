@@ -1,5 +1,5 @@
 
-// mymfcDoc.h : CmymfcDoc Å¬·¡½ºÀÇ ÀÎÅÍÆäÀÌ½º
+// mymfcDoc.h : CmymfcDoc í´ë˜ìŠ¤ì˜ ì¸í„°í˜ì´ìŠ¤
 //
 
 
@@ -8,17 +8,17 @@
 
 class CmymfcDoc : public CDocument
 {
-protected: // serialization¿¡¼­¸¸ ¸¸µé¾îÁı´Ï´Ù.
+protected: // serializationì—ì„œë§Œ ë§Œë“¤ì–´ì§‘ë‹ˆë‹¤.
 	CmymfcDoc();
 	DECLARE_DYNCREATE(CmymfcDoc)
 
-// Æ¯¼ºÀÔ´Ï´Ù.
+// íŠ¹ì„±ì…ë‹ˆë‹¤.
 public:
 
-// ÀÛ¾÷ÀÔ´Ï´Ù.
+// ì‘ì—…ì…ë‹ˆë‹¤.
 public:
 
-// ÀçÁ¤ÀÇÀÔ´Ï´Ù.
+// ì¬ì •ì˜ì…ë‹ˆë‹¤.
 public:
 	virtual BOOL OnNewDocument();
 	virtual void Serialize(CArchive& ar);
@@ -27,7 +27,7 @@ public:
 	virtual void OnDrawThumbnail(CDC& dc, LPRECT lprcBounds);
 #endif // SHARED_HANDLERS
 
-// ±¸ÇöÀÔ´Ï´Ù.
+// êµ¬í˜„ì…ë‹ˆë‹¤.
 public:
 	virtual ~CmymfcDoc();
 #ifdef _DEBUG
@@ -37,21 +37,21 @@ public:
 
 protected:
 
-// »ı¼ºµÈ ¸Ş½ÃÁö ¸Ê ÇÔ¼ö
+// ìƒì„±ëœ ë©”ì‹œì§€ ë§µ í•¨ìˆ˜
 protected:
 	DECLARE_MESSAGE_MAP()
 
 #ifdef SHARED_HANDLERS
-	// °Ë»ö Ã³¸®±â¿¡ ´ëÇÑ °Ë»ö ÄÜÅÙÃ÷¸¦ ¼³Á¤ÇÏ´Â µµ¿ì¹Ì ÇÔ¼ö
+	// ê²€ìƒ‰ ì²˜ë¦¬ê¸°ì— ëŒ€í•œ ê²€ìƒ‰ ì½˜í…ì¸ ë¥¼ ì„¤ì •í•˜ëŠ” ë„ìš°ë¯¸ í•¨ìˆ˜
 	void SetSearchContent(const CString& value);
 #endif // SHARED_HANDLERS
 public:
-	afx_msg void OnFileOpen(); // ÆÄÀÏ ¿ÀÇÂ
-	afx_msg void OnFileSave(); // ÆÄÀÏ ÀúÀå
-	afx_msg void OnFilterBinary(); // ¹ÙÀÌ³Ê¸® ÇÊÅÍ
-	afx_msg void OnFilterGrey(); // ±×·¹ÀÌ ÇÊÅÍ
-	afx_msg void OnFilterSobel(); // ¼Òº§ ÇÊÅÍ
-	afx_msg void OnFiltervalue(); // ÀÓ°è°ª ´ÙÀÌ¾ó·Î±×
+	afx_msg void OnFileOpen(); // íŒŒì¼ ì˜¤í”ˆ
+	afx_msg void OnFileSave(); // íŒŒì¼ ì €ì¥
+	afx_msg void OnFilterBinary(); // ë°”ì´ë„ˆë¦¬ í•„í„°
+	afx_msg void OnFilterGrey(); // ê·¸ë ˆì´ í•„í„°
+	afx_msg void OnFilterSobel(); // ì†Œë²¨ í•„í„°
+	afx_msg void OnFiltervalue(); // ì„ê³„ê°’ ë‹¤ì´ì–¼ë¡œê·¸
 	afx_msg void OnFileNew();
 
 
@@ -63,16 +63,16 @@ public:
 	void make_histogram(int max);
 	void OnHistogram(int);
 
-	CImage m_lmg; // ºÒ·¯¿Â ÀÌ¹ÌÁö
-	CImage f_Img; // ÇÊÅÍ°ÅÄ£ ÀÌ¹ÌÁö
-	CImage h_Img; // È÷½ºÅä±×·¥ ÀÌ¹ÌÁö
-	CImage widthp_Img; // °¡·Î ÇÁ·ÎÁ§¼Ç ÀÌ¹ÌÁö
-	CImage heightp_Img; // ¼¼·Î ÇÁ·ÎÁ§¼Ç ÀÌ¹ÌÁö
-	CImage RGBhistogram; //rgb È÷½ºÅä±×·¥ ÀÌ¹ÌÁö
+	CImage m_lmg; // ë¶ˆëŸ¬ì˜¨ ì´ë¯¸ì§€
+	CImage f_Img; // í•„í„°ê±°ì¹œ ì´ë¯¸ì§€
+	CImage h_Img; // íˆìŠ¤í† ê·¸ë¨ ì´ë¯¸ì§€
+	CImage widthp_Img; // ê°€ë¡œ í”„ë¡œì ì…˜ ì´ë¯¸ì§€
+	CImage heightp_Img; // ì„¸ë¡œ í”„ë¡œì ì…˜ ì´ë¯¸ì§€
+	CImage RGBhistogram; //rgb íˆìŠ¤í† ê·¸ë¨ ì´ë¯¸ì§€
 
 	int what_color;
-	bool flag; // ÇÊÅÍ ÇÃ·¡±×
-	int histo[256]; // È÷½ºÅä±×·¥ ¹è¿­
+	bool flag; // í•„í„° í”Œë˜ê·¸
+	int histo[256]; // íˆìŠ¤í† ê·¸ë¨ ë°°ì—´
 	int histoR[256];
 	int histoG[256];
 	int histoB[256];
