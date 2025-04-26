@@ -1,12 +1,12 @@
 
-// mymfcDoc.cpp : CmymfcDoc Å¬·¡½ºÀÇ ±¸Çö
+// mymfcDoc.cpp : CmymfcDoc í´ë˜ìŠ¤ì˜ êµ¬í˜„
 //
 
 #include "stdafx.h"
 #include "slider.h"
 #include "bright.h"
-// SHARED_HANDLERS´Â ¹Ì¸® º¸±â, Ãà¼ÒÆÇ ±×¸² ¹× °Ë»ö ÇÊÅÍ Ã³¸®±â¸¦ ±¸ÇöÇÏ´Â ATL ÇÁ·ÎÁ§Æ®¿¡¼­ Á¤ÀÇÇÒ ¼ö ÀÖÀ¸¸ç
-// ÇØ´ç ÇÁ·ÎÁ§Æ®¿Í ¹®¼­ ÄÚµå¸¦ °øÀ¯ÇÏµµ·Ï ÇØ Áİ´Ï´Ù.
+// SHARED_HANDLERSëŠ” ë¯¸ë¦¬ ë³´ê¸°, ì¶•ì†ŒíŒ ê·¸ë¦¼ ë° ê²€ìƒ‰ í•„í„° ì²˜ë¦¬ê¸°ë¥¼ êµ¬í˜„í•˜ëŠ” ATL í”„ë¡œì íŠ¸ì—ì„œ ì •ì˜í•  ìˆ˜ ìˆìœ¼ë©°
+// í•´ë‹¹ í”„ë¡œì íŠ¸ì™€ ë¬¸ì„œ ì½”ë“œë¥¼ ê³µìœ í•˜ë„ë¡ í•´ ì¤ë‹ˆë‹¤.
 #ifndef SHARED_HANDLERS
 #include "mymfc.h"
 #endif
@@ -43,11 +43,11 @@ BEGIN_MESSAGE_MAP(CmymfcDoc, CDocument)
 END_MESSAGE_MAP()
 
 
-// CmymfcDoc »ı¼º/¼Ò¸ê
+// CmymfcDoc ìƒì„±/ì†Œë©¸
 
 CmymfcDoc::CmymfcDoc()
 {
-	// TODO: ¿©±â¿¡ ÀÏÈ¸¼º »ı¼º ÄÚµå¸¦ Ãß°¡ÇÕ´Ï´Ù.
+	// TODO: ì—¬ê¸°ì— ì¼íšŒì„± ìƒì„± ì½”ë“œë¥¼ ì¶”ê°€í•©ë‹ˆë‹¤.
 	threshold = 128;
 	flag=0;
 	what_fill = 0;
@@ -62,8 +62,8 @@ BOOL CmymfcDoc::OnNewDocument()
 	if (!CDocument::OnNewDocument())
 		return FALSE;
 
-	// TODO: ¿©±â¿¡ ÀçÃÊ±âÈ­ ÄÚµå¸¦ Ãß°¡ÇÕ´Ï´Ù.
-	// SDI ¹®¼­´Â ÀÌ ¹®¼­¸¦ ´Ù½Ã »ç¿ëÇÕ´Ï´Ù.
+	// TODO: ì—¬ê¸°ì— ì¬ì´ˆê¸°í™” ì½”ë“œë¥¼ ì¶”ê°€í•©ë‹ˆë‹¤.
+	// SDI ë¬¸ì„œëŠ” ì´ ë¬¸ì„œë¥¼ ë‹¤ì‹œ ì‚¬ìš©í•©ë‹ˆë‹¤.
 
 	return TRUE;
 }
@@ -77,20 +77,20 @@ void CmymfcDoc::Serialize(CArchive& ar)
 {
 	if (ar.IsStoring())
 	{
-		// TODO: ¿©±â¿¡ ÀúÀå ÄÚµå¸¦ Ãß°¡ÇÕ´Ï´Ù.
+		// TODO: ì—¬ê¸°ì— ì €ì¥ ì½”ë“œë¥¼ ì¶”ê°€í•©ë‹ˆë‹¤.
 	}
 	else
 	{
-		// TODO: ¿©±â¿¡ ·Îµù ÄÚµå¸¦ Ãß°¡ÇÕ´Ï´Ù.
+		// TODO: ì—¬ê¸°ì— ë¡œë”© ì½”ë“œë¥¼ ì¶”ê°€í•©ë‹ˆë‹¤.
 	}
 }
 
 #ifdef SHARED_HANDLERS
 
-// Ãà¼ÒÆÇ ±×¸²À» Áö¿øÇÕ´Ï´Ù.
+// ì¶•ì†ŒíŒ ê·¸ë¦¼ì„ ì§€ì›í•©ë‹ˆë‹¤.
 void CmymfcDoc::OnDrawThumbnail(CDC& dc, LPRECT lprcBounds)
 {
-	// ¹®¼­ÀÇ µ¥ÀÌÅÍ¸¦ ±×¸®·Á¸é ÀÌ ÄÚµå¸¦ ¼öÁ¤ÇÏ½Ê½Ã¿À.
+	// ë¬¸ì„œì˜ ë°ì´í„°ë¥¼ ê·¸ë¦¬ë ¤ë©´ ì´ ì½”ë“œë¥¼ ìˆ˜ì •í•˜ì‹­ì‹œì˜¤.
 	dc.FillSolidRect(lprcBounds, RGB(255, 255, 255));
 
 	CString strText = _T("TODO: implement thumbnail drawing here");
@@ -108,14 +108,14 @@ void CmymfcDoc::OnDrawThumbnail(CDC& dc, LPRECT lprcBounds)
 	dc.SelectObject(pOldFont);
 }
 
-// °Ë»ö Ã³¸®±â¸¦ Áö¿øÇÕ´Ï´Ù.
+// ê²€ìƒ‰ ì²˜ë¦¬ê¸°ë¥¼ ì§€ì›í•©ë‹ˆë‹¤.
 void CmymfcDoc::InitializeSearchContent()
 {
 	CString strSearchContent;
-	// ¹®¼­ÀÇ µ¥ÀÌÅÍ¿¡¼­ °Ë»ö ÄÜÅÙÃ÷¸¦ ¼³Á¤ÇÕ´Ï´Ù.
-	// ÄÜÅÙÃ÷ ºÎºĞÀº ";"·Î ±¸ºĞµÇ¾î¾ß ÇÕ´Ï´Ù.
+	// ë¬¸ì„œì˜ ë°ì´í„°ì—ì„œ ê²€ìƒ‰ ì½˜í…ì¸ ë¥¼ ì„¤ì •í•©ë‹ˆë‹¤.
+	// ì½˜í…ì¸  ë¶€ë¶„ì€ ";"ë¡œ êµ¬ë¶„ë˜ì–´ì•¼ í•©ë‹ˆë‹¤.
 
-	// ¿¹: strSearchContent = _T("point;rectangle;circle;ole object;");
+	// ì˜ˆ: strSearchContent = _T("point;rectangle;circle;ole object;");
 	SetSearchContent(strSearchContent);
 }
 
@@ -139,7 +139,7 @@ void CmymfcDoc::SetSearchContent(const CString& value)
 
 #endif // SHARED_HANDLERS
 
-// CmymfcDoc Áø´Ü
+// CmymfcDoc ì§„ë‹¨
 
 #ifdef _DEBUG
 void CmymfcDoc::AssertValid() const
@@ -154,16 +154,16 @@ void CmymfcDoc::Dump(CDumpContext& dc) const
 #endif //_DEBUG
 
 
-// CmymfcDoc ¸í·É
+// CmymfcDoc ëª…ë ¹
 void CmymfcDoc::OnFileOpen(){
-	TCHAR szFilter[] = _T("JPG ÀÌ¹ÌÁö|*.jpg|PNG ÀÌ¹ÌÁö|*.png|Bitmap ÀÌ¹ÌÁö|*.bmp|Raw ÀÌ¹ÌÁö|*.raw|¸ğµçÆÄÀÏ(*.*)|*.*||");
+	TCHAR szFilter[] = _T("JPG ì´ë¯¸ì§€|*.jpg|PNG ì´ë¯¸ì§€|*.png|Bitmap ì´ë¯¸ì§€|*.bmp|Raw ì´ë¯¸ì§€|*.raw|ëª¨ë“ íŒŒì¼(*.*)|*.*||");
 	CFileDialog fileDlg(TRUE, NULL, NULL, OFN_HIDEREADONLY, szFilter);
 
 	if(IDOK == fileDlg.DoModal())
 	{
 		CString filePath;
 		filePath = fileDlg.GetPathName();
-		if (!m_lmg.IsNull()) { // ÇÊÅÍ¸µ ÀÌ¹ÌÁö ÀÖÀ¸¸é
+		if (!m_lmg.IsNull()) { // í•„í„°ë§ ì´ë¯¸ì§€ ìˆìœ¼ë©´
 			m_lmg.Destroy();
 		}
 		CFile file;
@@ -192,13 +192,13 @@ void CmymfcDoc::OnFileOpen(){
 			m_lmg.Load(filePath);
 		}
 	}
-	UpdateAllViews(NULL);// ºä °»½Å
+	UpdateAllViews(NULL);// ë·° ê°±ì‹ 
 }
 
 void CmymfcDoc::OnFileSave()
 {
 	if(!f_Img.IsNull()){
-		TCHAR szFilter[] = _T("JPG ÀÌ¹ÌÁö|*.jpg|PNG ÀÌ¹ÌÁö|*.png|Bitmap ÀÌ¹ÌÁö|*.bmp|Raw ÀÌ¹ÌÁö|*.raw|¸ğµçÆÄÀÏ(*.*)|*.*||");
+		TCHAR szFilter[] = _T("JPG ì´ë¯¸ì§€|*.jpg|PNG ì´ë¯¸ì§€|*.png|Bitmap ì´ë¯¸ì§€|*.bmp|Raw ì´ë¯¸ì§€|*.raw|ëª¨ë“ íŒŒì¼(*.*)|*.*||");
 		CFileDialog fileDlg(TRUE, NULL, NULL, OFN_HIDEREADONLY, szFilter);
 
 		if(fileDlg.DoModal() == IDOK){
@@ -245,9 +245,9 @@ void CmymfcDoc::OnFilterGrey()
 	what_fill = 1;
 	flag=1;
 	F_before();
-	f_Img.Create(m_lmg.GetWidth(), m_lmg.GetHeight(), 24); // 24ºñÆ® ºñÆ®¸Ê »ı¼º
-	m_lmg.BitBlt(f_Img.GetDC(), 0, 0, m_lmg.GetWidth(), m_lmg.GetHeight(), 0, 0, SRCCOPY); // ¿ø·¡ ÀÌ¹ÌÁö¸¦ º¹»çÇÔ
-	f_Img.ReleaseDC(); // dc ÇØÁ¦
+	f_Img.Create(m_lmg.GetWidth(), m_lmg.GetHeight(), 24); // 24ë¹„íŠ¸ ë¹„íŠ¸ë§µ ìƒì„±
+	m_lmg.BitBlt(f_Img.GetDC(), 0, 0, m_lmg.GetWidth(), m_lmg.GetHeight(), 0, 0, SRCCOPY); // ì›ë˜ ì´ë¯¸ì§€ë¥¼ ë³µì‚¬í•¨
+	f_Img.ReleaseDC(); // dc í•´ì œ
 	memset(histo,0,256*sizeof(int));
 	int h_max = histo[0];
 	make_grey();
@@ -294,9 +294,9 @@ void CmymfcDoc::OnFilterGrey()
 		}
 	}
 
-	UpdateAllViews(NULL); // ºä °»½Å
+	UpdateAllViews(NULL); // ë·° ê°±ì‹ 
 }
-void CmymfcDoc::OnFilterSobel() // ¼Òº§ ÇÊÅÍ
+void CmymfcDoc::OnFilterSobel() // ì†Œë²¨ í•„í„°
 {
 	what_fill = 3;
 	flag = 1;
@@ -385,7 +385,7 @@ void CmymfcDoc::OnFilterSobel() // ¼Òº§ ÇÊÅÍ
 	make_histogram(h_max);
 	make_hp();
 	make_wp();
-	UpdateAllViews(NULL); // ºä °»½Å		
+	UpdateAllViews(NULL); // ë·° ê°±ì‹ 		
 }
 void CmymfcDoc::OnFilterBinary(){
 	what_fill = 2;
@@ -442,7 +442,7 @@ void CmymfcDoc::OnFilterBinary(){
 
 void CmymfcDoc::F_before(void)
 {
-	if (!f_Img.IsNull()) { // ÇÊÅÍ¸µ ÀÌ¹ÌÁö ÀÖÀ¸¸é
+	if (!f_Img.IsNull()) { // í•„í„°ë§ ì´ë¯¸ì§€ ìˆìœ¼ë©´
 		f_Img.Destroy();
 		h_Img.Destroy();
 		widthp_Img.Destroy();
@@ -455,7 +455,7 @@ void CmymfcDoc::F_before(void)
 void CmymfcDoc::make_grey(void)
 {
 	grey = new int * [m_lmg.GetHeight() + 2];
-	for (int i = 0; i < m_lmg.GetHeight() + 2; i++) {//³ôÀÌ¸¸Å­ ¹İº¹ÇØ¼­ ÀüÃ¼ ´Ù ÇÒ´ç 
+	for (int i = 0; i < m_lmg.GetHeight() + 2; i++) {//ë†’ì´ë§Œí¼ ë°˜ë³µí•´ì„œ ì „ì²´ ë‹¤ í• ë‹¹ 
 		grey[i] = new int[m_lmg.GetWidth() + 2];
 		memset(grey[i], 0, sizeof(int) * (m_lmg.GetWidth() + 2));
 	}
@@ -479,7 +479,7 @@ void CmymfcDoc::make_histogram(int h_max)
 {
 	int h;
 	h_Img.Destroy();
-	h_Img.Create(256, h_max, 24); // 24ºñÆ® ºñÆ®¸Ê »ı¼º °ËÁ¤ÀÓ
+	h_Img.Create(256, h_max, 24); // 24ë¹„íŠ¸ ë¹„íŠ¸ë§µ ìƒì„± ê²€ì •ì„
 	BYTE* byteptr = (BYTE*)h_Img.GetBits();
 	int pitch = h_Img.GetPitch();
 	unsigned int pix_data = 255;
@@ -487,7 +487,7 @@ void CmymfcDoc::make_histogram(int h_max)
 	case 1:
 		for (int w = 0; w < 256; w++) {
 			for (h = 0; h < histo[w]; h++)
-			{	//// ±âº» »ö»óÀº °ËÁ¤
+			{	//// ê¸°ë³¸ ìƒ‰ìƒì€ ê²€ì •
 				*(byteptr + pitch * (h_max - h - 1) + 3 * w) = 255;
 				*(byteptr + pitch * (h_max - h - 1) + 3 * w + 1) = 255;
 				*(byteptr + pitch * (h_max - h - 1) + 3 * w + 2) = 255;
@@ -500,7 +500,7 @@ void CmymfcDoc::make_histogram(int h_max)
 	default :
 		for (int w = 250; w < 256; w++) {
 			for (h = 0; h < histo[255]; h++)
-			{	//// ±âº» »ö»óÀº °ËÁ¤
+			{	//// ê¸°ë³¸ ìƒ‰ìƒì€ ê²€ì •
 				*(byteptr + pitch * (h_max - h - 1) + 3 * w) = 255;
 				*(byteptr + pitch * (h_max - h - 1) + 3 * w + 1) = 255;
 				*(byteptr + pitch * (h_max - h - 1) + 3 * w + 2) = 255;
@@ -511,7 +511,7 @@ void CmymfcDoc::make_histogram(int h_max)
 		}
 		for (int w = 0; w < 5; w++) {
 			for (h = 0; h < histo[0]; h++)
-			{	//// ±âº» »ö»óÀº °ËÁ¤
+			{	//// ê¸°ë³¸ ìƒ‰ìƒì€ ê²€ì •
 				*(byteptr + pitch * (h_max - h - 1) + 3 * w) = 255;
 				*(byteptr + pitch * (h_max - h - 1) + 3 * w + 1) = 255;
 				*(byteptr + pitch * (h_max - h - 1) + 3 * w + 2) = 255;
@@ -531,13 +531,13 @@ void CmymfcDoc::OnFileNew()
 		threshold = 128;
 		flag=0;
 		what_fill = 0;
-		if (!f_Img.IsNull()) { // ÇÊÅÍ¸µ ÀÌ¹ÌÁö ÀÖÀ¸¸é
+		if (!f_Img.IsNull()) { // í•„í„°ë§ ì´ë¯¸ì§€ ìˆìœ¼ë©´
 			f_Img.Destroy();
 			h_Img.Destroy();
 			widthp_Img.Destroy();
 			heightp_Img.Destroy();
 		}
-		UpdateAllViews(NULL); // ºä °»½Å
+		UpdateAllViews(NULL); // ë·° ê°±ì‹ 
 	}
 }
 
@@ -635,7 +635,7 @@ void CmymfcDoc::OnBrightness(){
 			OnFilterSobel();
 			break;
 		}
-		UpdateAllViews(NULL); // ºä °»½Å
+		UpdateAllViews(NULL); // ë·° ê°±ì‹ 
 	}
 }
 void CmymfcDoc::OnStretching(){
@@ -733,18 +733,18 @@ void CmymfcDoc::OnEqualizing(){
 		for(int i =0; i<256; i++){
 			normal[i] = (double)sum_histogram[i]/temp*255;
 			cur = normal[i]*10;
-			//¹İ¿Ã¸² °è»ê
-			if((cur/5) %2 == 0){ //¹ö¸²
+			//ë°˜ì˜¬ë¦¼ ê³„ì‚°
+			if((cur/5) %2 == 0){ //ë²„ë¦¼
 				cur -= cur%5;
 				cur /= 10;
 			}
-			else{ // ¿Ã¸²
+			else{ // ì˜¬ë¦¼
 				cur += 5-(cur%5);
 				cur /= 10;
 			}
 			normal[i] = cur;
 		}
-		memset(histo,0,sizeof(histo)); //È÷½ºÅä±×·¥ ÃÊ±âÈ­
+		memset(histo,0,sizeof(histo)); //íˆìŠ¤í† ê·¸ë¨ ì´ˆê¸°í™”
 		for(int i=1; i<f_Img.GetHeight(); i++){
 			for(int j=1; j<f_Img.GetWidth(); j++){
 				int change = normal[grey[i][j]];
@@ -880,7 +880,7 @@ void CmymfcDoc::OnHistogram(int what_color){
 		
 		for (int w = 0; w < 256; w++) {
 			for (h = 0; h < histoR[w]; h++)
-			{	//// ±âº» »ö»óÀº °ËÁ¤
+			{	//// ê¸°ë³¸ ìƒ‰ìƒì€ ê²€ì •
 				BYTE *p = (BYTE*)RGBhistogram.GetPixelAddress(w, h);
 
 				*p++ = 255;
@@ -910,7 +910,7 @@ void CmymfcDoc::OnHistogram(int what_color){
 		RGBhistogram.Create(256, h_max[1], 24);
 		for (int w = 0; w < 256; w++) {
 			for (h = 0; h < histoG[w]; h++)
-			{	//// ±âº» »ö»óÀº °ËÁ¤
+			{	//// ê¸°ë³¸ ìƒ‰ìƒì€ ê²€ì •
 				BYTE *p = (BYTE*)RGBhistogram.GetPixelAddress(w, h);
 
 				*p++ = 255;
@@ -940,7 +940,7 @@ void CmymfcDoc::OnHistogram(int what_color){
 		RGBhistogram.Create(256, h_max[2], 24);
 		for (int w = 0; w < 256; w++) {
 			for (h = 0; h < histoB[w]; h++)
-			{	//// ±âº» »ö»óÀº °ËÁ¤
+			{	//// ê¸°ë³¸ ìƒ‰ìƒì€ ê²€ì •
 				BYTE *p = (BYTE*)RGBhistogram.GetPixelAddress(w, h);
 
 				*p++ = 0;
