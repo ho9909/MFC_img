@@ -5,21 +5,21 @@
 #include "afxcmn.h"
 #include "mymfc.h"
 
-// bright ´ëÈ­ »óÀÚÀÔ´Ï´Ù.
+// bright ëŒ€í™” ìƒìì…ë‹ˆë‹¤.
 
 class bright : public CDialogEx
 {
 	DECLARE_DYNAMIC(bright)
 
 public:
-	bright(CWnd* pParent = NULL);   // Ç¥ÁØ »ı¼ºÀÚÀÔ´Ï´Ù.
+	bright(CWnd* pParent = NULL);   // í‘œì¤€ ìƒì„±ìì…ë‹ˆë‹¤.
 	virtual ~bright();
 
-// ´ëÈ­ »óÀÚ µ¥ÀÌÅÍÀÔ´Ï´Ù.
+// ëŒ€í™” ìƒì ë°ì´í„°ì…ë‹ˆë‹¤.
 	enum { IDD = IDD_BRIGHTNESS };
 
 protected:
-	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV Áö¿øÀÔ´Ï´Ù.
+	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV ì§€ì›ì…ë‹ˆë‹¤.
 
 	DECLARE_MESSAGE_MAP()
 public:
