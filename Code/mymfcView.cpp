@@ -1,11 +1,11 @@
 
-// mymfcView.cpp : CmymfcView Å¬·¡½ºÀÇ ±¸Çö
+// mymfcView.cpp : CmymfcView í´ë˜ìŠ¤ì˜ êµ¬í˜„
 //
 
 #include "stdafx.h"
 #include "recordprogram.h"
-// SHARED_HANDLERS´Â ¹Ì¸® º¸±â, Ãà¼ÒÆÇ ±×¸² ¹× °Ë»ö ÇÊÅÍ Ã³¸®±â¸¦ ±¸ÇöÇÏ´Â ATL ÇÁ·ÎÁ§Æ®¿¡¼­ Á¤ÀÇÇÒ ¼ö ÀÖÀ¸¸ç
-// ÇØ´ç ÇÁ·ÎÁ§Æ®¿Í ¹®¼­ ÄÚµå¸¦ °øÀ¯ÇÏµµ·Ï ÇØ Áİ´Ï´Ù.
+// SHARED_HANDLERSëŠ” ë¯¸ë¦¬ ë³´ê¸°, ì¶•ì†ŒíŒ ê·¸ë¦¼ ë° ê²€ìƒ‰ í•„í„° ì²˜ë¦¬ê¸°ë¥¼ êµ¬í˜„í•˜ëŠ” ATL í”„ë¡œì íŠ¸ì—ì„œ ì •ì˜í•  ìˆ˜ ìˆìœ¼ë©°
+// í•´ë‹¹ í”„ë¡œì íŠ¸ì™€ ë¬¸ì„œ ì½”ë“œë¥¼ ê³µìœ í•˜ë„ë¡ í•´ ì¤ë‹ˆë‹¤.
 #ifndef SHARED_HANDLERS
 #include "mymfc.h"
 #endif
@@ -27,7 +27,7 @@
 IMPLEMENT_DYNCREATE(CmymfcView, CScrollView)
 
 BEGIN_MESSAGE_MAP(CmymfcView, CScrollView)
-	// Ç¥ÁØ ÀÎ¼â ¸í·ÉÀÔ´Ï´Ù.
+	// í‘œì¤€ ì¸ì‡„ ëª…ë ¹ì…ë‹ˆë‹¤.
 	ON_COMMAND(ID_FILE_PRINT, &CScrollView::OnFilePrint)
 	ON_COMMAND(ID_FILE_PRINT_DIRECT, &CScrollView::OnFilePrint)
 	ON_COMMAND(ID_FILE_PRINT_PREVIEW, &CmymfcView::OnFilePrintPreview)
@@ -40,11 +40,11 @@ BEGIN_MESSAGE_MAP(CmymfcView, CScrollView)
 	ON_WM_MOUSEMOVE()
 END_MESSAGE_MAP()
 
-// CmymfcView »ı¼º/¼Ò¸ê
+// CmymfcView ìƒì„±/ì†Œë©¸
 
 CmymfcView::CmymfcView()
 {
-	// TODO: ¿©±â¿¡ »ı¼º ÄÚµå¸¦ Ãß°¡ÇÕ´Ï´Ù.
+	// TODO: ì—¬ê¸°ì— ìƒì„± ì½”ë“œë¥¼ ì¶”ê°€í•©ë‹ˆë‹¤.
 
 }
 
@@ -54,13 +54,13 @@ CmymfcView::~CmymfcView()
 
 BOOL CmymfcView::PreCreateWindow(CREATESTRUCT& cs)
 {
-	// TODO: CREATESTRUCT cs¸¦ ¼öÁ¤ÇÏ¿© ¿©±â¿¡¼­
-	//  Window Å¬·¡½º ¶Ç´Â ½ºÅ¸ÀÏÀ» ¼öÁ¤ÇÕ´Ï´Ù.
+	// TODO: CREATESTRUCT csë¥¼ ìˆ˜ì •í•˜ì—¬ ì—¬ê¸°ì—ì„œ
+	//  Window í´ë˜ìŠ¤ ë˜ëŠ” ìŠ¤íƒ€ì¼ì„ ìˆ˜ì •í•©ë‹ˆë‹¤.
 
 	return CScrollView::PreCreateWindow(cs);
 }
 
-// CmymfcView ±×¸®±â
+// CmymfcView ê·¸ë¦¬ê¸°
 
 void CmymfcView::OnDraw(CDC* pDC)
 {
@@ -70,13 +70,13 @@ void CmymfcView::OnDraw(CDC* pDC)
 		return;
 
 
-	pDC = GetDC(); // dc °¡Á®¿È
-	pDC -> Rectangle(10, 30, 400, 450);		// 1 ¿øº» »çÁø
-	pDC -> Rectangle(410, 30, 800, 450);	// 2 ÇÊÅÍ Àû¿ë »çÁø
-	pDC -> Rectangle(810, 30, 1200, 450);	// 3 ¼¼·Î ÇÁ·ÎÁ§¼Ç
-	pDC -> Rectangle(10, 460, 400, 880);	// 4 È÷½ºÅä±×·¥
-	pDC -> Rectangle(410, 460, 800, 880);	// 5 °¡·Î ÇÁ·ÎÁ§¼Ç
-	pDC -> Rectangle(810, 460, 1200, 880);	// 6 RGBÈ÷½ºÅä±×·¥
+	pDC = GetDC(); // dc ê°€ì ¸ì˜´
+	pDC -> Rectangle(10, 30, 400, 450);		// 1 ì›ë³¸ ì‚¬ì§„
+	pDC -> Rectangle(410, 30, 800, 450);	// 2 í•„í„° ì ìš© ì‚¬ì§„
+	pDC -> Rectangle(810, 30, 1200, 450);	// 3 ì„¸ë¡œ í”„ë¡œì ì…˜
+	pDC -> Rectangle(10, 460, 400, 880);	// 4 íˆìŠ¤í† ê·¸ë¨
+	pDC -> Rectangle(410, 460, 800, 880);	// 5 ê°€ë¡œ í”„ë¡œì ì…˜
+	pDC -> Rectangle(810, 460, 1200, 880);	// 6 RGBíˆìŠ¤í† ê·¸ë¨
 
 	CPen pen,  *oldpen;
 	POINT x;
@@ -90,17 +90,17 @@ void CmymfcView::OnDraw(CDC* pDC)
 		pen.DeleteObject();
 	}
 
-	if (!pDoc->m_lmg.IsNull()){ // ¿øº» ÀÌ¹ÌÁö Ãâ·Â
+	if (!pDoc->m_lmg.IsNull()){ // ì›ë³¸ ì´ë¯¸ì§€ ì¶œë ¥
 		SetStretchBltMode(pDC->m_hDC, HALFTONE);
 		pDoc->m_lmg.StretchBlt(pDC->m_hDC, 11, 31, 388, 418);
 		if (!c_Img.IsNull())
 			c_Img.Destroy();
 	}
-	if (!pDoc->f_Img.IsNull() && pDoc->flag == 1){ // ÇÊÅÍ¸µ ÀÌ¹ÌÁö Ãâ·Â
+	if (!pDoc->f_Img.IsNull() && pDoc->flag == 1){ // í•„í„°ë§ ì´ë¯¸ì§€ ì¶œë ¥
 		SetStretchBltMode(pDC->m_hDC, HALFTONE);
 		pDoc->f_Img.StretchBlt(pDC->m_hDC, 411, 31, 388, 418);
 	}
-	if (!pDoc->h_Img.IsNull() && pDoc->flag == 1) { // È÷½ºÅä±×·¥ ÀÌ¹ÌÁö Ãâ·Â
+	if (!pDoc->h_Img.IsNull() && pDoc->flag == 1) { // íˆìŠ¤í† ê·¸ë¨ ì´ë¯¸ì§€ ì¶œë ¥
 		SetStretchBltMode(pDC->m_hDC, HALFTONE);
 		pDoc->h_Img.StretchBlt(pDC->m_hDC, 11, 461, 388, 418,NOTSRCCOPY);
 	}
@@ -108,20 +108,20 @@ void CmymfcView::OnDraw(CDC* pDC)
 	pDC->TextOutW(5, 890, _T("0"));
 	pDC->TextOutW(385, 890, _T("255"));
 
-	if (!pDoc->widthp_Img.IsNull() && pDoc->flag == 1) { // °¡·Î ÇÁ·ÎÁ§¼Ç
+	if (!pDoc->widthp_Img.IsNull() && pDoc->flag == 1) { // ê°€ë¡œ í”„ë¡œì ì…˜
 		SetStretchBltMode(pDC->m_hDC, HALFTONE);
 		pDoc->widthp_Img.StretchBlt(pDC->m_hDC, 811, 31, 388, 418);
 	}
-	if (!pDoc->heightp_Img.IsNull() && pDoc->flag == 1) { // ¼¼·Î ÇÁ·ÎÁ§¼Ç
+	if (!pDoc->heightp_Img.IsNull() && pDoc->flag == 1) { // ì„¸ë¡œ í”„ë¡œì ì…˜
 		SetStretchBltMode(pDC->m_hDC, HALFTONE);
 		pDoc->heightp_Img.StretchBlt(pDC->m_hDC, 411, 461, 388, 418);
 	}
-	if (!pDoc->RGBhistogram.IsNull() && pDoc->flag == 1) { // rgb È÷½ºÅä±×·¥
+	if (!pDoc->RGBhistogram.IsNull() && pDoc->flag == 1) { // rgb íˆìŠ¤í† ê·¸ë¨
 		pDoc->RGBhistogram.StretchBlt(pDC->m_hDC,811, 461, 388, 418, NOTSRCCOPY);
 	}
 	pDoc -> flag = 0;
 
-	// TODO: ¿©±â¿¡ ¿ø½Ã µ¥ÀÌÅÍ¿¡ ´ëÇÑ ±×¸®±â ÄÚµå¸¦ Ãß°¡ÇÕ´Ï´Ù.
+	// TODO: ì—¬ê¸°ì— ì›ì‹œ ë°ì´í„°ì— ëŒ€í•œ ê·¸ë¦¬ê¸° ì½”ë“œë¥¼ ì¶”ê°€í•©ë‹ˆë‹¤.
 }
 
 void CmymfcView::OnInitialUpdate()
@@ -129,13 +129,13 @@ void CmymfcView::OnInitialUpdate()
 	CScrollView::OnInitialUpdate();
 
 	CSize sizeTotal;
-	// TODO: ÀÌ ºäÀÇ ÀüÃ¼ Å©±â¸¦ °è»êÇÕ´Ï´Ù.
+	// TODO: ì´ ë·°ì˜ ì „ì²´ í¬ê¸°ë¥¼ ê³„ì‚°í•©ë‹ˆë‹¤.
 	sizeTotal.cx = sizeTotal.cy = 100;
 	SetScrollSizes(MM_TEXT, sizeTotal);
 }
 
 
-// CmymfcView ÀÎ¼â
+// CmymfcView ì¸ì‡„
 
 
 void CmymfcView::OnFilePrintPreview()
@@ -147,18 +147,18 @@ void CmymfcView::OnFilePrintPreview()
 
 BOOL CmymfcView::OnPreparePrinting(CPrintInfo* pInfo)
 {
-	// ±âº»ÀûÀÎ ÁØºñ
+	// ê¸°ë³¸ì ì¸ ì¤€ë¹„
 	return DoPreparePrinting(pInfo);
 }
 
 void CmymfcView::OnBeginPrinting(CDC* /*pDC*/, CPrintInfo* /*pInfo*/)
 {
-	// TODO: ÀÎ¼âÇÏ±â Àü¿¡ Ãß°¡ ÃÊ±âÈ­ ÀÛ¾÷À» Ãß°¡ÇÕ´Ï´Ù.
+	// TODO: ì¸ì‡„í•˜ê¸° ì „ì— ì¶”ê°€ ì´ˆê¸°í™” ì‘ì—…ì„ ì¶”ê°€í•©ë‹ˆë‹¤.
 }
 
 void CmymfcView::OnEndPrinting(CDC* /*pDC*/, CPrintInfo* /*pInfo*/)
 {
-	// TODO: ÀÎ¼â ÈÄ Á¤¸® ÀÛ¾÷À» Ãß°¡ÇÕ´Ï´Ù.
+	// TODO: ì¸ì‡„ í›„ ì •ë¦¬ ì‘ì—…ì„ ì¶”ê°€í•©ë‹ˆë‹¤.
 }
 
 void CmymfcView::OnRButtonUp(UINT /* nFlags */, CPoint point)
@@ -175,7 +175,7 @@ void CmymfcView::OnContextMenu(CWnd* /* pWnd */, CPoint point)
 }
 
 
-// CmymfcView Áø´Ü
+// CmymfcView ì§„ë‹¨
 
 #ifdef _DEBUG
 void CmymfcView::AssertValid() const
@@ -188,7 +188,7 @@ void CmymfcView::Dump(CDumpContext& dc) const
 	CScrollView::Dump(dc);
 }
 
-CmymfcDoc* CmymfcView::GetDocument() const // µğ¹ö±×µÇÁö ¾ÊÀº ¹öÀüÀº ÀÎ¶óÀÎÀ¸·Î ÁöÁ¤µË´Ï´Ù.
+CmymfcDoc* CmymfcView::GetDocument() const // ë””ë²„ê·¸ë˜ì§€ ì•Šì€ ë²„ì „ì€ ì¸ë¼ì¸ìœ¼ë¡œ ì§€ì •ë©ë‹ˆë‹¤.
 {
 	ASSERT(m_pDocument->IsKindOf(RUNTIME_CLASS(CmymfcDoc)));
 	return (CmymfcDoc*)m_pDocument;
@@ -196,7 +196,7 @@ CmymfcDoc* CmymfcView::GetDocument() const // µğ¹ö±×µÇÁö ¾ÊÀº ¹öÀüÀº ÀÎ¶óÀÎÀ¸·Î 
 #endif //_DEBUG
 
 
-// CmymfcView ¸Ş½ÃÁö Ã³¸®±â
+// CmymfcView ë©”ì‹œì§€ ì²˜ë¦¬ê¸°
 
 void CmymfcView::OnMouseMove(UINT nFlags, CPoint point)
 {		
@@ -353,7 +353,7 @@ void CmymfcView::OnLButtonDown(UINT nFlags, CPoint point)
 }
 void CmymfcView::OnDiscrimination(){
 
-		// ÀÌ¹ÌÁö ÀÌ¹Ì ÀÖÀ¸¸é »èÁ¦
+		// ì´ë¯¸ì§€ ì´ë¯¸ ìˆìœ¼ë©´ ì‚­ì œ
 	if (!c_Img.IsNull()){
 		result_Img.Destroy();
 	}
@@ -376,7 +376,7 @@ void CmymfcView::OnDiscrimination(){
 	wp_sum = wp_sum/pDoc->m_lmg.GetHeight();
 
 
-	// ½ÃÀÛ ÁöÁ¡ Ã£±â
+	// ì‹œì‘ ì§€ì  ì°¾ê¸°
 	//i = pDoc->m_lmg.GetHeight()-1;
 	//while(pDoc->load_wp[i] == 0){
 	//	if(pDoc->load_wp[i] != 0)
@@ -389,7 +389,7 @@ void CmymfcView::OnDiscrimination(){
 			cur = i;
 		}
 	}
-	// °¡·Î ½ÃÀÛÁ¡
+	// ê°€ë¡œ ì‹œì‘ì 
 	//while(pDoc->load_hp[temp] == 0){
 	//	if(pDoc->load_hp[temp] != 0)
 	//		break;
@@ -401,7 +401,7 @@ void CmymfcView::OnDiscrimination(){
 	}
 	i = cur+100;
 	y_count  = cur-100;
-	//// ¿©À¯°ª µÎ±â
+	//// ì—¬ìœ ê°’ ë‘ê¸°
 	//i = i-30;
 	//if(i > pDoc->m_lmg.GetHeight()-1){
 	//	i = pDoc->m_lmg.GetHeight()-1;
@@ -409,16 +409,16 @@ void CmymfcView::OnDiscrimination(){
 
 
 	//k = temp;
-	// ³¡ÁöÁ¡ Ã£±â
+	// ëì§€ì  ì°¾ê¸°
 	//y_count = i-200;
 	//x_count = k+300;
 
-	//¼¼·Î ³¡Á¡ (Æò±Õ°ªÀ¸·Î ÇÏ±â¿¡´Â ÇÑ°è°¡....)
+	//ì„¸ë¡œ ëì  (í‰ê· ê°’ìœ¼ë¡œ í•˜ê¸°ì—ëŠ” í•œê³„ê°€....)
 	//for(y_count=pDoc->m_lmg.GetHeight()-1; y_count>=0; y_count--){
 	//	if(pDoc->load_wp[y_count] > wp_sum-40 && pDoc->load_wp[y_count] != 0 &&y_count != i)
 	//		break;
 	//}
-	// °¡·Î ³¡Á¡
+	// ê°€ë¡œ ëì 
 	for(x_count=0; x_count<pDoc->m_lmg.GetWidth(); x_count++){
 		if(pDoc->load_hp[x_count] > hp_sum && pDoc->load_hp[x_count] != 0 && x_count != k && x_count > k)
 			break;
@@ -429,11 +429,11 @@ void CmymfcView::OnDiscrimination(){
 	}
 	x_count = x_count +30;
 
-	// ¿øº» ÀÌ¹ÌÁö °ªÀ» ³Ñ±æ °æ¿ì
+	// ì›ë³¸ ì´ë¯¸ì§€ ê°’ì„ ë„˜ê¸¸ ê²½ìš°
 	if(x_count > pDoc->m_lmg.GetWidth())
 		x_count = pDoc->m_lmg.GetWidth();
 
-	// ÃßÃâÇÑ ÀÌ¹ÌÁö Ãâ·Â
+	// ì¶”ì¶œí•œ ì´ë¯¸ì§€ ì¶œë ¥
 	result_Img.Create(abs(x_count-k),abs(i-y_count),24);
 	pDoc->m_lmg.BitBlt(result_Img.GetDC(),0,0,result_Img.GetWidth(),result_Img.GetHeight(),k,y_count,SRCCOPY);
 	result_Img.ReleaseDC();
