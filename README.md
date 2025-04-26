@@ -44,7 +44,6 @@
 >> <p>
 >> 화면 녹화 및 캡쳐 창
 >> <br />
-
 >> <img src="https://github.com/user-attachments/assets/d591f48b-1c18-44f6-afbc-a3b6a653db9c" width="50%">
 >> <br />
 >> 위의 이미지와 같이 캡쳐를 위한 창을 새로 열고, ffmpeg을 이용하여 캡쳐를 진행한다.
