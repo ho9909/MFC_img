@@ -1,5 +1,5 @@
 
-// mymfcView.h : CmymfcView Å¬·¡½ºÀÇ ÀÎÅÍÆäÀÌ½º
+// mymfcView.h : CmymfcView í´ë˜ìŠ¤ì˜ ì¸í„°í˜ì´ìŠ¤
 //
 
 #pragma once
@@ -7,28 +7,28 @@
 
 class CmymfcView : public CScrollView
 {
-protected: // serialization¿¡¼­¸¸ ¸¸µé¾îÁı´Ï´Ù.
+protected: // serializationì—ì„œë§Œ ë§Œë“¤ì–´ì§‘ë‹ˆë‹¤.
 	CmymfcView();
 	DECLARE_DYNCREATE(CmymfcView)
 
-// Æ¯¼ºÀÔ´Ï´Ù.
+// íŠ¹ì„±ì…ë‹ˆë‹¤.
 public:
 	CmymfcDoc* GetDocument() const;
 
-// ÀÛ¾÷ÀÔ´Ï´Ù.
+// ì‘ì—…ì…ë‹ˆë‹¤.
 public:
 
-// ÀçÁ¤ÀÇÀÔ´Ï´Ù.
+// ì¬ì •ì˜ì…ë‹ˆë‹¤.
 public:
-	virtual void OnDraw(CDC* pDC);  // ÀÌ ºä¸¦ ±×¸®±â À§ÇØ ÀçÁ¤ÀÇµÇ¾ú½À´Ï´Ù.
+	virtual void OnDraw(CDC* pDC);  // ì´ ë·°ë¥¼ ê·¸ë¦¬ê¸° ìœ„í•´ ì¬ì •ì˜ë˜ì—ˆìŠµë‹ˆë‹¤.
 	virtual BOOL PreCreateWindow(CREATESTRUCT& cs);
 protected:
-	virtual void OnInitialUpdate(); // »ı¼º ÈÄ Ã³À½ È£ÃâµÇ¾ú½À´Ï´Ù.
+	virtual void OnInitialUpdate(); // ìƒì„± í›„ ì²˜ìŒ í˜¸ì¶œë˜ì—ˆìŠµë‹ˆë‹¤.
 	virtual BOOL OnPreparePrinting(CPrintInfo* pInfo);
 	virtual void OnBeginPrinting(CDC* pDC, CPrintInfo* pInfo);
 	virtual void OnEndPrinting(CDC* pDC, CPrintInfo* pInfo);
 
-// ±¸ÇöÀÔ´Ï´Ù.
+// êµ¬í˜„ì…ë‹ˆë‹¤.
 public:
 	virtual ~CmymfcView();
 #ifdef _DEBUG
@@ -38,7 +38,7 @@ public:
 
 protected:
 
-// »ı¼ºµÈ ¸Ş½ÃÁö ¸Ê ÇÔ¼ö
+// ìƒì„±ëœ ë©”ì‹œì§€ ë§µ í•¨ìˆ˜
 protected:
 	afx_msg void OnFilePrintPreview();
 	afx_msg void OnRButtonUp(UINT nFlags, CPoint point);
@@ -63,7 +63,7 @@ public:
 	afx_msg void captureArea();
 };
 
-#ifndef _DEBUG  // mymfcView.cppÀÇ µğ¹ö±× ¹öÀü
+#ifndef _DEBUG  // mymfcView.cppì˜ ë””ë²„ê·¸ ë²„ì „
 inline CmymfcDoc* CmymfcView::GetDocument() const
    { return reinterpret_cast<CmymfcDoc*>(m_pDocument); }
 #endif
